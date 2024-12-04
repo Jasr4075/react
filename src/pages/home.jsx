@@ -1,21 +1,23 @@
 import React from 'react';
-import { Container, Jumbotron, Button } from 'react-bootstrap';
+import { useNavigate } from 'react-router-dom';
+import NavbarComponent from '../components/NavbarComponent';
 
 const Home = () => {
+    const navigate = useNavigate();
+
+    const goToAbout = () => {
+        navigate('/about');
+    };
+
     return (
-        <Container className="mt-5">
-            <Jumbotron>
-                <h1>Welcome to the Home Page</h1>
-                <p>
-                    This is the home page of our application. Explore the features and learn more about what we offer.
-                </p>
-                <Button variant="primary" href="/about">
-                    Learn More
-                </Button>
-            </Jumbotron>
-        </Container>
+        <div>
+            <container>
+                <NavbarComponent />
+                <h1>Home</h1>
+                <button onClick={goToAbout}>Go to About</button>
+            </container>
+        </div>
     );
 };
 
 export default Home;
-s
