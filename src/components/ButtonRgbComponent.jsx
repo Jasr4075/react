@@ -23,7 +23,7 @@ const CustomButton = styled(Button)`
   }
 `;
 
-const ButtonRGB = ({ children, ...props }) => {
+const ButtonRgbComponent = ({ children, ...props }) => {
   return (
     <CustomButton {...props}>
       {children}
@@ -31,4 +31,4 @@ const ButtonRGB = ({ children, ...props }) => {
   );
 }
 
-export default ButtonRGB;
+export default ButtonRgbComponent;

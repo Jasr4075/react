@@ -1,20 +1,25 @@
 import React from 'react';
-import { Container, Row, Col, Card, Button } from 'react-bootstrap';
+import { Container, Row, Col, Card } from 'react-bootstrap';
 import NavbarComponent from '../components/NavbarComponent';
-import ButtonRGB from '../components/ButtonRGB';
+import ButtonRgbComponent from '../components/ButtonRgbComponent';
 import './Home.css';
 
 const Home = () => {
+    // funciones
+    const handleButtonClick = () => {
+        Toast('¡Botón presionado!');
+    };
+
     return (
         <>
             <NavbarComponent />
-
+            
             <Container fluid className="hero-section" style={{ backgroundImage: 'url("https://wallpapercave.com/wp/wp5861473.jpg")', }}>
                 <Row className="justify-content-center text-center">
                     <Col md={6}>
                         <h1 className="display-3 text-white">Mi Portafolio</h1>
                         <p className="lead text-white">Descripcion</p>
-                        <ButtonRGB>Ver Meus Proyectos</ButtonRGB>
+                        <ButtonRgbComponent onClick={handleButtonClick}>Ver Meus Proyectos</ButtonRgbComponent>
                     </Col>
                 </Row>
             </Container>
@@ -31,7 +36,7 @@ const Home = () => {
                                 <Card.Text>
                                     DESCRIPCION: Desarrollo sitios web.
                                 </Card.Text>
-                                <ButtonRGB>Más Información</ButtonRGB>
+                                <ButtonRgbComponent onClick={handleButtonClick}>Más Información</ButtonRgbComponent>
                             </Card.Body>
                         </Card>
                     </Col>
@@ -45,7 +50,7 @@ const Home = () => {
                                 <Card.Text>
                                     DESCRIPCION: Desarrollo sitios web.
                                 </Card.Text>
-                                <ButtonRGB>Ver Proyectos</ButtonRGB>
+                                <ButtonRgbComponent onClick={handleButtonClick}>Ver Proyectos</ButtonRgbComponent>
                             </Card.Body>
                         </Card>
                     </Col>
@@ -54,14 +59,16 @@ const Home = () => {
 
             <Container id="contact" className="bg-light py-5">
                 <Row className="justify-content-center">
-                    <Col md={6}>
+                    <Col md={4}>
                         <h2 className="text-center">Contáctame</h2>
                         <p className="text-center">¡Estoy listo para tu próximo proyecto!</p>
-                        <ButtonRGB
+                        <ButtonRgbComponent
+                                onClick={handleButtonClick}
+                                className="text-center"
                             style={{
                                 backgroundColor: '#228B22',
                             }}
-                        >Enviar Mensaje</ButtonRGB>
+                        >Enviar Mensaje</ButtonRgbComponent>
                     </Col>
                 </Row>
             </Container>
@@ -70,3 +77,4 @@ const Home = () => {
 };
 
 export default Home;
+
