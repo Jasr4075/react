@@ -3,7 +3,7 @@ import { Button } from "react-bootstrap";
 import styled from 'styled-components';
 
 const CustomButton = styled(Button)`
-  background-color: #6a0dad;                    /* Morado oscuro */
+  background-color: ##4169E1;                    /* Morado oscuro */
   color: white;                                 /* Color del texto */
   border: none;                                 /* Sin bordes */
   padding: 10px 20px;                           /* Espaciado */
@@ -23,7 +23,7 @@ const CustomButton = styled(Button)`
   }
 `;
 
-const ButtonPrimary = ({ children, ...props }) => {
+const ButtonRGB = ({ children, ...props }) => {
   return (
     <CustomButton {...props}>
       {children}
@@ -31,4 +31,4 @@ const ButtonPrimary = ({ children, ...props }) => {
   );
 }
 
-export default ButtonPrimary;
+export default ButtonRGB;
