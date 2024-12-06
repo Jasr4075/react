@@ -8,6 +8,8 @@ import CustomCard from '../../components/card/CustomCardComponent';
 import './Home.css';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Pagination, Navigation, EffectCoverflow } from "swiper";
 
 const Home = () => {
     React.useEffect(() => {
@@ -63,27 +65,75 @@ const Home = () => {
                     />
 
                     <CustomCard
-                        title="titulo1"
-                        subtitle="Subtitulo 1"
-                        text="contenido 1."
+                        title="titulo2"
+                        subtitle="Subtitulo 2"
+                        text="contenido 2."
                         link1="#"
                         link1Text="Link 1"
                         link2="#"
-                        link2Text="Link 1"
+                        link2Text="Link 2"
                         animation="fade-righ"
                     />
                     <CustomCard
-                        title="titulo1"
-                        subtitle="Subtitulo 1"
-                        text="contenido 1."
+                        title="titulo3"
+                        subtitle="Subtitulo 3"
+                        text="contenido 3."
                         link1="#"
                         link1Text="Link 1"
                         link2="#"
-                        link2Text="Link 1"
+                        link2Text="Link 2"
                         animation="fade-righ"
                     />
                 </Row>
             </Container>
+
+            <section id="gallery" className="py-5">
+                <Container>
+                    <h2 className="text-center mb-5" data-aos="fade-up">
+                        Galería
+                    </h2>
+                    <Swiper
+                        effect="coverflow"
+                        grabCursor={true}
+                        centeredSlides={true}
+                        slidesPerView="auto"
+                        coverflowEffect={{
+                            rotate: 50,
+                            stretch: 0,
+                            depth: 100,
+                            modifier: 1,
+                            slideShadows: true,
+                        }}
+                        pagination={{ clickable: true }}
+                        navigation={true}
+                        modules={[Pagination, Navigation, EffectCoverflow]}
+                        className="mySwiper"
+                        data-aos="fade-up"
+                    >
+                        <SwiperSlide>
+                            <img
+                                src="/placeholder.svg?height=500&width=300"
+                                alt="Captura de pantalla 1"
+                                className="img-fluid"
+                            />
+                        </SwiperSlide>
+                        <SwiperSlide>
+                            <img
+                                src="/placeholder.svg?height=500&width=300"
+                                alt="Captura de pantalla 2"
+                                className="img-fluid"
+                            />
+                        </SwiperSlide>
+                        <SwiperSlide>
+                            <img
+                                src="/placeholder.svg?height=500&width=300"
+                                alt="Captura de pantalla 3"
+                                className="img-fluid"
+                            />
+                        </SwiperSlide>
+                    </Swiper>
+                </Container>
+            </section>
 
             <Container id="contact" className="bg-light py-5">
                 <Row className="justify-content-center">
