@@ -1,13 +1,15 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from '../pages/home/home';
+import Login from '../pages/login/login';
 
 const AppRoutes = () => {
     return (
         <Router>
             <Routes>
                 <Route path="/" element={<Home />} />
-                {/* Agrega más rutas aquí */}
+                <Route path="/login" element={<Login />} />
+                
             </Routes>
         </Router>
     );
