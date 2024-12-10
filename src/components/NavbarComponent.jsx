@@ -10,7 +10,7 @@ const NavbarComponent = () => {
         <Navbar.Toggle aria-controls="navbar-nav" />
         <Navbar.Collapse id="navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link href="/features">Empresa</Nav.Link>
+            <Nav.Link href="http://localhost:5173/#Características ">Características </Nav.Link>
             <Nav.Link href="/contact">Contacto</Nav.Link>
             <Nav.Link href="/contact">Suporte</Nav.Link>
             <Nav.Link href="/contact">Novidades</Nav.Link>
@@ -18,7 +18,7 @@ const NavbarComponent = () => {
           </Nav>
           <div className="d-flex ms-auto">
             <ButtonRgbComponent className="me-2" href="/login" >Login</ButtonRgbComponent>
-            <ButtonRgbComponent>Register</ButtonRgbComponent>
+            <ButtonRgbComponent href="/register">Register</ButtonRgbComponent>
           </div>
         </Navbar.Collapse>
       </Container>
