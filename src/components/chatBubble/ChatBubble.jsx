@@ -1,16 +1,12 @@
 import React, { useState } from 'react';
 import './ChatBubble.css';
+import { Toaster, toast } from 'react-hot-toast';
 
 const ChatBubble = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [message, setMessage] = useState('');
 
   const toggleChat = () => setIsOpen(!isOpen);
-
-  const handleSendMessage = () => {
-    alert(`Mensaje enviado: ${message}`);
-    setMessage('');
-  };
 
   return (
     <div className="chat-bubble-container">
@@ -34,11 +30,14 @@ const ChatBubble = () => {
             ></textarea>
           </div>
           <div className="chat-footer">
-            <button onClick={handleSendMessage}>Enviar</button>
+            <button onClick={() => toast.success('Mensaje enviado correctamente')}>Enviar</button>
           </div>
         </div>
       )}
+      <Toaster />
+
     </div>
+
   );
 };
 

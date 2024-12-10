@@ -1,10 +1,11 @@
 import React, { useEffect } from 'react';
-import { Container, Row, Col, Button } from 'react-bootstrap';
+import { Container, Row, Col, Accordion } from 'react-bootstrap';
 import NavbarComponent from '../../components/NavbarComponent';
 import ButtonRgbComponent from '../../components/ButtonRgbComponent';
 import { Toaster, toast } from 'react-hot-toast';
 import ChatBubble from '../../components/chatBubble/ChatBubble';
 import CustomCard from '../../components/card/CustomCardComponent';
+import AccordionComponent from '../../components/accordion/accordionComponent';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -53,18 +54,17 @@ const styles = {
     margin: '0 auto',
   },
   contact: {
-    backgroundColor: '#f9f9f9',
     padding: '2rem 0',
     borderTop: '1px solid #ddd',
   },
-  contactHeading: {
-    marginBottom: '1rem',
-    fontSize: '1.8rem',
-  },
-  contactText: {
-    marginBottom: '1.5rem',
-    color: '#555',
-  },
+  // contactHeading: {
+  //   marginBottom: '1rem',
+  //   fontSize: '1.8rem',
+  // },
+  // contactText: {
+  //   marginBottom: '1.5rem',
+  //   color: '#555',
+  // },
   chatBubbleContainer: {
     marginTop: '2rem',
     display: 'flex',
@@ -157,21 +157,8 @@ const Home = () => {
         </Container>
       </section>
 
-      <Container id="contact" style={styles.contact}>
-        <Row className="justify-content-center">
-          <Col md={4}>
-            <h2 style={styles.contactHeading}>Contacto</h2>
-            <p style={styles.contactText}>¿Tienes alguna pregunta? ¡Escríbenos!</p>
-            <div className="d-flex justify-content-center">
-              <ButtonRgbComponent
-                onClick={() => toast.success('Mensaje enviado correctamente')}
-                style={{ backgroundColor: '#228B22' }}
-              >
-                Enviar Mensaje
-              </ButtonRgbComponent>
-            </div>
-          </Col>
-        </Row>
+      <Container id="contact" style={styles.contact}>FAQ
+      <AccordionComponent />
         <div style={styles.chatBubbleContainer}>
           <ChatBubble />
         </div>
