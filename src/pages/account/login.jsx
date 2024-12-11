@@ -1,13 +1,12 @@
 import { Container, Row, Col, Form } from 'react-bootstrap';
 import { Toaster, toast } from 'react-hot-toast';
-import Aos from 'aos';
-import NavbarComponent from '../components/NavbarComponent';
-import ButtonRgbComponent from '../components/ButtonRgbComponent';
+import NavbarComponent from '../../components/NavbarComponent';
+import ButtonRgbComponent from '../../components/ButtonRgbComponent';
 
 const Login = () => {
     const handleLogin = (e) => {
         e.preventDefault();
-        toast.success('Inicio de sesión exitoso');
+        toast.success('Login bem-sucedido');
     };
 
     const styles = {
@@ -52,32 +51,32 @@ const Login = () => {
                 <Row className="justify-content-center">
                     <Col md={6}>
                         <Form onSubmit={handleLogin} style={styles.loginForm}>
-                            <h2 style={styles.heading}>Bienvenido de nuevo</h2>
+                            <h2 style={styles.heading}>Bem-vindo de volta</h2>
                             <Form.Group controlId="formBasicEmail" style={styles.formControl}>
-                                <Form.Label style={styles.formLabel}>Correo electrónico</Form.Label>
-                                <Form.Control type="email" placeholder="Ingresa tu correo" required />
+                                <Form.Label style={styles.formLabel}>Email</Form.Label>
+                                <Form.Control type="email" placeholder="Digite seu email" required />
                             </Form.Group>
                             <Form.Group controlId="formBasicPassword" style={styles.formControl}>
-                                <Form.Label style={styles.formLabel}>Contraseña</Form.Label>
-                                <Form.Control type="password" placeholder="Ingresa tu contraseña" required />
+                                <Form.Label style={styles.formLabel}>Senha</Form.Label>
+                                <Form.Control type="password" placeholder="Digite sua senha" required />
                             </Form.Group>
                             <div className="d-flex justify-content-between align-items-center mb-4">
-                                <Form.Check type="checkbox" label="Recuérdame" />
-                                <a href="#recuperar" style={styles.link}>
-                                    ¿Olvidaste tu contraseña?
+                                <Form.Check type="checkbox" label="Lembrar-me" />
+                                <a href="/login/resetPassword" style={styles.link}>
+                                    Esqueceu sua senha?
                                 </a>
                             </div>
                             <ButtonRgbComponent
                                 type="submit"
                                 style={styles.button}
                             >
-                                Iniciar Sesión
+                                Entrar
                             </ButtonRgbComponent>
                             <div style={styles.textCenter}>
                                 <p>
-                                    ¿No tienes cuenta?{' '}
-                                    <a href="#registro" style={styles.link}>
-                                        Regístrate
+                                    Não tem uma conta?{' '}
+                                    <a href="/register" style={styles.link}>
+                                        Cadastre-se
                                     </a>
                                 </p>
                             </div>

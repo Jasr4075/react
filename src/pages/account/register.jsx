@@ -1,12 +1,12 @@
 import { Container, Row, Col, Form } from 'react-bootstrap';
-import NavbarComponent from '../components/NavbarComponent';
-import ButtonRgbComponent from '../components/ButtonRgbComponent';
+import NavbarComponent from '../../components/NavbarComponent';
+import ButtonRgbComponent from '../../components/ButtonRgbComponent';
 import { Toaster, toast } from 'react-hot-toast';
 
 const Register = () => {
     const handleRegister = (e) => {
         e.preventDefault();
-        toast.success('Registro exitoso. ¡Bienvenido!');
+        toast.success('Registro bem-sucedido. Bem-vindo!');
     };
 
     const styles = {
@@ -38,54 +38,54 @@ const Register = () => {
                 <Row className="justify-content-center">
                     <Col md={6}>
                         <Form onSubmit={handleRegister} style={styles.formContainer}>
-                            <h2 style={styles.formHeading}>Crea tu cuenta</h2>
+                            <h2 style={styles.formHeading}>Crie sua conta</h2>
                             <Form.Group controlId="formName" className="mb-3">
-                                <Form.Label>Nombre completo</Form.Label>
+                                <Form.Label>Nome completo</Form.Label>
                                 <Form.Control
                                     type="text"
-                                    placeholder="Ingresa tu nombre completo"
+                                    placeholder="Digite seu nome completo"
                                     required
                                 />
                             </Form.Group>
                             <Form.Group controlId="formEmail" className="mb-3">
-                                <Form.Label>Correo electrónico</Form.Label>
+                                <Form.Label>Endereço de e-mail</Form.Label>
                                 <Form.Control
                                     type="email"
-                                    placeholder="Ingresa tu correo"
+                                    placeholder="Digite seu e-mail"
                                     required
                                 />
                             </Form.Group>
                             <Form.Group controlId="formPassword" className="mb-3">
-                                <Form.Label>Contraseña</Form.Label>
+                                <Form.Label>Senha</Form.Label>
                                 <Form.Control
                                     type="password"
-                                    placeholder="Crea una contraseña"
+                                    placeholder="Crie uma senha"
                                     required
                                 />
                             </Form.Group>
                             <Form.Group controlId="formConfirmPassword" className="mb-4">
-                                <Form.Label>Confirma tu contraseña</Form.Label>
+                                <Form.Label>Confirme sua senha</Form.Label>
                                 <Form.Control
                                     type="password"
-                                    placeholder="Repite tu contraseña"
+                                    placeholder="Repita sua senha"
                                     required
                                 />
                             </Form.Group>
                             <div className="mb-4">
                                 <Form.Check
                                     type="checkbox"
-                                    label="Acepto los términos y condiciones"
+                                    label="Aceito os termos e condições"
                                     required
                                 />
                             </div>
                             <ButtonRgbComponent type="submit" style={styles.button}>
-                                Registrarse
+                                Registrar-se
                             </ButtonRgbComponent>
                             <div className="text-center mt-3">
                                 <p>
-                                    ¿Ya tienes cuenta?{' '}
+                                    Já tem uma conta?{' '}
                                     <a href="/login" style={styles.link}>
-                                        Inicia sesión
+                                        Faça login
                                     </a>
                                 </p>
                             </div>

@@ -1,7 +1,8 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from '../pages/home/home';
-import Login from '../pages/login';
-import Register from '../pages/register';
+import Login from '../pages//account/login';
+import Register from '../pages/account/register';
+import ResetPassword from '../pages/account/resetPassword';
 import ItemsPage from '../pages/itemsPage';
 
 const AppRoutes = () => {
@@ -10,6 +11,7 @@ const AppRoutes = () => {
             <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/login" element={<Login />} />
+                <Route path="/login/resetPassword" element={<ResetPassword />} />
                 <Route path="/register" element={<Register />} />
                 <Route path="/items" element={<ItemsPage />} />
 

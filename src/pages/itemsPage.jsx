@@ -1,10 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import NavbarComponent from '../components/NavbarComponent';
 import ButtonRgbComponent from '../components/ButtonRgbComponent';
+import AosInitializer from '../plugins/aos';
 import { Container, Modal, Carousel } from 'react-bootstrap';
 import './ItemsPage.css';
 
+
+
 const ItemsPage = () => {
+
     const [items, setItems] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
@@ -17,7 +21,7 @@ const ItemsPage = () => {
                 if (data.type === 'success') {
                     setItems(data.data);
                 } else {
-                    throw new Error('Error al obtener los datos');
+                    throw new Error('Erro ao obter os dados');
                 }
             })
             .catch((err) => setError(err.message))
@@ -34,15 +38,16 @@ const ItemsPage = () => {
 
     return (
         <>
+            <AosInitializer />
             <NavbarComponent />
             <Container className="items-page-container">
-                <h1 className="items-page-title">Items Disponibles</h1>
-                {loading && <p className="loading-message">Cargando...</p>}
-                {error && <p className="error-message">Error: {error}</p>}
+                <h1 className="items-page-title">Itens Disponíveis</h1>
+                {loading && <p className="loading-message">Carregando...</p>}
+                {error && <p className="error-message">Erro: {error}</p>}
                 {!loading && !error && (
                     <div className="items-grid">
                         {items.map((item) => (
-                            <div key={item.id} className="item-card">
+                            <div key={item.id} className="item-card" data-aos="fade-up">
                                 <img
                                     src={item.image}
                                     alt={item.name}
@@ -51,10 +56,10 @@ const ItemsPage = () => {
                                 />
                                 <h2 className="item-name">{item.name}</h2>
                                 <p className="item-price">
-                                    <strong>Precio:</strong> ${item.price}
+                                    <strong>Preço:</strong> ${item.price}
                                 </p>
                                 <p className="item-category">
-                                    <strong>Categoría:</strong> {item.category.name}
+                                    <strong>Categoria:</strong> {item.category.name}
                                 </p>
                                 <ButtonRgbComponent onClick={() => handleShowDetails(item)}>
                                     Mais detalhes
@@ -77,26 +82,26 @@ const ItemsPage = () => {
                                     <img
                                         className="d-block w-100"
                                         src={img}
-                                        alt={`Imagen ${index + 1}`}
+                                        alt={`Imagem ${index + 1}`}
                                     />
                                 </Carousel.Item>
                             ))}
                         </Carousel>
                         <p className="mt-4">
-                            <strong>Descripción:</strong> {selectedItem.description}
+                            <strong>Descrição:</strong> {selectedItem.description}
                         </p>
                         <p>
-                            <strong>Precio:</strong> ${selectedItem.price}
+                            <strong>Preço:</strong> ${selectedItem.price}
                         </p>
                         <p>
-                            <strong>Categoría:</strong> {selectedItem.category.name}
+                            <strong>Categoria:</strong> {selectedItem.category.name}
                         </p>
                         <p>
-                            <strong>Detalles de pago:</strong> Pago disponible con tarjetas de crédito y PIX.
+                            <strong>Detalhes de pagamento:</strong> Pagamento disponível com cartões de crédito e PIX.
                         </p>
                     </Modal.Body>
                     <Modal.Footer>
-                        <ButtonRgbComponent onClick={handleCloseDetails}>Cerrar</ButtonRgbComponent>
+                        <ButtonRgbComponent onClick={handleCloseDetails}>Fechar</ButtonRgbComponent>
                     </Modal.Footer>
                 </Modal>
             )}
