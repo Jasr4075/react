@@ -1,4 +1,3 @@
-import React from 'react';
 import { Container, Row, Col, Form } from 'react-bootstrap';
 import NavbarComponent from '../components/NavbarComponent';
 import ButtonRgbComponent from '../components/ButtonRgbComponent';

@@ -1,4 +1,3 @@
-import React from 'react';
 import { Navbar, Nav, Container } from 'react-bootstrap';
 import ButtonRgbComponent from './ButtonRgbComponent';
 
@@ -10,11 +9,13 @@ const NavbarComponent = () => {
         <Navbar.Toggle aria-controls="navbar-nav" />
         <Navbar.Collapse id="navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link href="http://localhost:5173/#Características ">Características </Nav.Link>
+            <Nav.Link href="http://localhost:5173/#Características">Características </Nav.Link>
             <Nav.Link href="/contact">Contacto</Nav.Link>
             <Nav.Link href="/contact">Suporte</Nav.Link>
             <Nav.Link href="/contact">Novidades</Nav.Link>
             <Nav.Link href="/about">Acerca de</Nav.Link>
+            <Nav.Link href="/items">items</Nav.Link>
+
           </Nav>
           <div className="d-flex ms-auto">
             <ButtonRgbComponent className="me-2" href="/login" >Login</ButtonRgbComponent>

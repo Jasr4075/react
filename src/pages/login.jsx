@@ -1,8 +1,8 @@
-import React from 'react';
 import { Container, Row, Col, Form } from 'react-bootstrap';
+import { Toaster, toast } from 'react-hot-toast';
+import Aos from 'aos';
 import NavbarComponent from '../components/NavbarComponent';
 import ButtonRgbComponent from '../components/ButtonRgbComponent';
-import { Toaster, toast } from 'react-hot-toast';
 
 const Login = () => {
     const handleLogin = (e) => {

@@ -14,76 +14,60 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
-const styles = {
-  hero: {
-    minHeight: '100vh',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    textAlign: 'left',
-    background: 'linear-gradient(45deg, #4b79a1, #283e51)',
-    color: 'white',
-  },
-  featuresHeading: {
-    fontSize: '2rem',
-    marginBottom: '2rem',
-  },
-  card: {
-    border: 'none',
-    boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
-    transition: 'transform 0.3s ease, box-shadow 0.3s ease',
-  },
-  cardHover: {
-    transform: 'translateY(-10px)',
-    boxShadow: '0 8px 15px rgba(0, 0, 0, 0.2)',
-  },
-  galleryHeading: {
-    fontSize: '2rem',
-    marginBottom: '2rem',
-  },
-  gallerySwiper: {
-    width: '100%',
-    maxWidth: '800px',
-    margin: '0 auto',
-  },
-  galleryImg: {
-    borderRadius: '8px',
-    maxHeight: '400px',
-    objectFit: 'cover',
-    display: 'block',
-    margin: '0 auto',
-  },
-  contact: {
-    padding: '2rem 0',
-    borderTop: '1px solid #ddd',
-  },
-  // contactHeading: {
-  //   marginBottom: '1rem',
-  //   fontSize: '1.8rem',
-  // },
-  // contactText: {
-  //   marginBottom: '1.5rem',
-  //   color: '#555',
-  // },
-  chatBubbleContainer: {
-    marginTop: '2rem',
-    display: 'flex',
-    justifyContent: 'center',
-  },
-  buttonPrimary: {
-    backgroundColor: '#0066ff',
-    border: 'none',
-    padding: '0.75rem 1.5rem',
-    fontSize: '1rem',
-    borderRadius: '5px',
-    transition: 'background-color 0.3s ease, transform 0.2s ease',
-  },
-};
-
 const Home = () => {
   useEffect(() => {
     AOS.init({ duration: 1000 });
   }, []);
+
+  const styles = {
+    hero: {
+      minHeight: '100vh',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      textAlign: 'left',
+      background: 'linear-gradient(45deg, #4b79a1, #283e51)',
+      color: 'white',
+    },
+    featuresHeading: {
+      fontSize: '2rem',
+      marginBottom: '2rem',
+    },
+    card: {
+      border: 'none',
+      boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
+      transition: 'transform 0.3s ease, box-shadow 0.3s ease',
+    },
+    cardHover: {
+      transform: 'translateY(-10px)',
+      boxShadow: '0 8px 15px rgba(0, 0, 0, 0.2)',
+    },
+    galleryHeading: {
+      fontSize: '2rem',
+      marginBottom: '2rem',
+    },
+    gallerySwiper: {
+      width: '100%',
+      maxWidth: '800px',
+      margin: '0 auto',
+    },
+    galleryImg: {
+      borderRadius: '8px',
+      maxHeight: '400px',
+      objectFit: 'cover',
+      display: 'block',
+      margin: '0 auto',
+    },
+    contact: {
+      padding: '2rem 0',
+      borderTop: '1px solid #ddd',
+    },
+    chatBubbleContainer: {
+      marginTop: '2rem',
+      display: 'flex',
+      justifyContent: 'center',
+    },
+  };
 
   return (
     <>
@@ -95,8 +79,7 @@ const Home = () => {
               <h1 data-aos="fade-up">ActivoVo</h1>
               <p data-aos="fade-up" data-aos-delay="200">Frase o descripción del app</p>
               <ButtonRgbComponent
-                href="#features"
-                className="btn-primary btn-lg mt-3"
+                href="/#Características"
                 data-aos="fade-up"
                 data-aos-delay="400"
                 onClick={() => toast.success('Descargando APK')}
