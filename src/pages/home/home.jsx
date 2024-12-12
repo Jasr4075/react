@@ -74,11 +74,9 @@ const Home = () => {
         <Container className="h-100">
           <Row className="h-500 align-items-center">
             <Col lg={6}>
-              <h1 data-aos="fade-up">ActivoVo</h1>
+              <h1 data-aos="fade-up">APP</h1>
               <p data-aos="fade-up" data-aos-delay="200">
-                Melhore sua qualidade de vida com atividades
-                físicas personalizadas e apoio social, desenvolvido
-                especialmente para a saúde e bem-estar dos idosos.</p>
+                Descrpcion do app</p>
               <ButtonRgbComponent
                 href="/#Características"
                 data-aos="fade-up"
@@ -128,9 +126,11 @@ const Home = () => {
             data-aos="fade-up"
           >
             {[
-              "https://tse4.mm.bing.net/th?id=OIG1..Je6_UtkStuI9JrCHE1p&pid=ImgGn",
-              "https://tse4.mm.bing.net/th?id=OIG1..Je6_UtkStuI9JrCHE1p&pid=ImgGn",
-              "https://tse4.mm.bing.net/th?id=OIG1..Je6_UtkStuI9JrCHE1p&pid=ImgGn",
+              "./public/HomeActivoVo.png",
+              "./public/Discover.png",
+              "./public/Task.png",
+              "./public/Pending.png",
+              "./public/Exercise.png",
             ].map((imageUrl, index) => (
               <SwiperSlide key={index}>
                 <img

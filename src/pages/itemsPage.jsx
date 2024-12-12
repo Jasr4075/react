@@ -41,6 +41,7 @@ const ItemsPage = () => {
             <AosInitializer />
             <NavbarComponent />
             <Container className="items-page-container">
+                <br /><br />
                 <h1 className="items-page-title">Itens Disponíveis</h1>
                 {loading && <p className="loading-message">Carregando...</p>}
                 {error && <p className="error-message">Erro: {error}</p>}
@@ -77,7 +78,7 @@ const ItemsPage = () => {
                     </Modal.Header>
                     <Modal.Body>
                         <Carousel>
-                            {[selectedItem.image, selectedItem.image].map((img, index) => (
+                            {selectedItem.images.map((img, index) => (
                                 <Carousel.Item key={index}>
                                     <img
                                         className="d-block w-100"
