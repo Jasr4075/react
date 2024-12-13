@@ -49,7 +49,7 @@ const Home = () => {
     },
     galleryImg: {
       borderRadius: '8px',
-      maxHeight: '400px',
+      maxHeight: '500px', // Increased image height
       objectFit: 'cover',
       display: 'block',
       margin: '0 auto',
@@ -74,9 +74,9 @@ const Home = () => {
         <Container className="h-100">
           <Row className="h-500 align-items-center">
             <Col lg={6}>
-              <h1 data-aos="fade-up">APP</h1>
+              <h1 data-aos="fade-up">ActivoVo</h1>
               <p data-aos="fade-up" data-aos-delay="200">
-                Descrpcion do app</p>
+              Bem-vindo ao seu companheiro de treino para uma vida mais saudável e ativa! Um app feito especialmente para idosos, com treinos personalizados, interface amigável e acompanhamento do seu progresso, tudo ao alcance de um toque.</p>
               <ButtonRgbComponent
                 href="/#Características"
                 data-aos="fade-up"
@@ -92,24 +92,49 @@ const Home = () => {
 
       <Container id="Características" className="py-5">
         <h2 style={styles.featuresHeading} data-aos="fade-up">Características Principais</h2>
-        <Row>
-            {[
-              { title: 'Título 1', subtitle: 'Subtítulo 1', text: 'Conteúdo 1', link1: '#', link1Text: 'Link 1', link2: '#', link2Text: 'Link 2' },
-              { title: 'Título 2', subtitle: 'Subtítulo 2', text: 'Conteúdo 2', link1: '#', link1Text: 'Link 1', link2: '#', link2Text: 'Link 2' },
-              { title: 'Título 3', subtitle: 'Subtítulo 3', text: 'Conteúdo 3', link1: '#', link1Text: 'Link 1', link2: '#', link2Text: 'Link 2' },
-            ].map((card, i) => (
-              <CustomCard
-                key={i}
-                title={card.title}
-                subtitle={card.subtitle}
-                text={card.text}
-                link1={card.link1}
-                link1Text={card.link1Text}
-                link2={card.link2}
-                link2Text={card.link2Text}
-                animation="fade-right"
-              />
-            ))}
+        <Row className="justify-content-center"> 
+          {[
+            {
+              title: 'Personalização de Treinos',
+              subtitle: 'Treinos Personalizados para uma Vida Saudável',
+              text: 'O aplicativo oferece treinos adaptados às necessidades específicas de idosos, considerando níveis de mobilidade, condições de saúde e objetivos pessoais. Os exercícios podem ser ajustados conforme o progresso do usuário.',
+              link1: '#',
+              link1Text: 'Link 1',
+              link2: '#',
+              link2Text: 'Link 2'
+            },
+            {
+              title: 'Interface Intuitiva e Amigável',
+              subtitle: 'Simples, Clara e Feita para Você',
+              text: 'Uma interface projetada para fácil navegação, com botões grandes, fontes legíveis e opções de assistência por áudio para garantir que os idosos usem o app com conforto e segurança.',
+              link1: '#',
+              link1Text: 'Link 1',
+              link2: '#',
+              link2Text: 'Link 2'
+            },
+            {
+              title: 'Monitoramento e Feedback',
+              subtitle: 'Acompanhe Seu Progresso e Mantenha-se Motivado',
+              text: 'O app permite o acompanhamento do progresso, oferecendo relatórios simples sobre frequência de treinos, calorias gastas e metas alcançadas. Possui também lembretes amigáveis para manter a regularidade.',
+              link1: '#',
+              link1Text: 'Link 1',
+              link2: '#',
+              link2Text: 'Link 2'
+            },
+          ].map((card, i) => (
+            <CustomCard
+              className="col-md-4 mb-4" 
+              key={i}
+              title={card.title}
+              subtitle={card.subtitle}
+              text={card.text}
+              link1={card.link1}
+              link1Text={card.link1Text}
+              link2={card.link2}
+              link2Text={card.link2Text}
+              animation="fade-right"
+            />
+          ))}
         </Row>
       </Container>
 
@@ -119,7 +144,7 @@ const Home = () => {
           <Swiper
             modules={[Navigation, Pagination, EffectCoverflow]}
             spaceBetween={30}
-            slidesPerView={1}
+            slidesPerView={1} // Show one image at a time to accommodate larger images
             pagination={{ clickable: true }}
             navigation
             className="mySwiper"

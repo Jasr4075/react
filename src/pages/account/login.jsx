@@ -47,9 +47,9 @@ const Login = () => {
     return (
         <>
             <NavbarComponent />
-            <Container className="py-5">
+            <Container className="py-5" >
                 <Row className="justify-content-center">
-                    <Col md={6}>
+                    <Col md={4}>
                         <Form onSubmit={handleLogin} style={styles.loginForm}>
                             <h2 style={styles.heading}>Bem-vindo de volta</h2>
                             <Form.Group controlId="formBasicEmail" style={styles.formControl}>

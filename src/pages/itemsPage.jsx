@@ -42,7 +42,7 @@ const ItemsPage = () => {
             <NavbarComponent />
             <Container className="items-page-container">
                 <br /><br />
-                <h1 className="items-page-title">Itens Disponíveis</h1>
+                <h1 className="items-page-title">Itens de academia disponíveis</h1>
                 {loading && <p className="loading-message">Carregando...</p>}
                 {error && <p className="error-message">Erro: {error}</p>}
                 {!loading && !error && (
