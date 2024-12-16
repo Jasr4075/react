@@ -49,7 +49,7 @@ const Home = () => {
     },
     galleryImg: {
       borderRadius: '27px',
-      maxHeight: '500px', // Increased image height
+      maxHeight: '500px',
       objectFit: 'cover',
       display: 'block',
       margin: '0 auto',
@@ -76,7 +76,7 @@ const Home = () => {
             <Col lg={6}>
               <h1 data-aos="fade-up">ActivoVo</h1>
               <p data-aos="fade-up" data-aos-delay="200">
-              Bem-vindo ao seu companheiro de treino para uma vida mais saudável e ativa! Um app feito especialmente para idosos, com treinos personalizados, interface amigável e acompanhamento do seu progresso, tudo ao alcance de um toque.</p>
+                Bem-vindo ao seu companheiro de treino para uma vida mais saudável e ativa! Um app feito especialmente para idosos, com treinos personalizados, interface amigável e acompanhamento do seu progresso, tudo ao alcance de um toque.</p>
               <ButtonRgbComponent
                 href="/#Características"
                 data-aos="fade-up"
@@ -92,7 +92,7 @@ const Home = () => {
 
       <Container id="Características" className="py-5">
         <h2 style={styles.featuresHeading} data-aos="fade-up">Características Principais</h2>
-        <Row className="justify-content-center"> 
+        <Row className="justify-content-center">
           {[
             {
               title: 'Personalização de Treinos',
@@ -123,7 +123,7 @@ const Home = () => {
             },
           ].map((card, i) => (
             <CustomCard
-              className="col-md-4 mb-4" 
+              className="col-md-4 mb-4"
               key={i}
               title={card.title}
               subtitle={card.subtitle}
@@ -144,7 +144,7 @@ const Home = () => {
           <Swiper
             modules={[Navigation, Pagination, EffectCoverflow]}
             spaceBetween={30}
-            slidesPerView={1} // Show one image at a time to accommodate larger images
+            slidesPerView={1}
             pagination={{ clickable: true }}
             navigation
             className="mySwiper"
@@ -182,76 +182,3 @@ const Home = () => {
 };
 
 export default Home;
-
-// <!DOCTYPE html>
-// <html lang="es">
-// <head>
-//     <meta charset="UTF-8">
-//     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-//     <title>Bienvenido a Mi Sitio</title>
-//     <style>
-//         body, html {
-//             margin: 0;
-//             padding: 0;
-//             height: 100%;
-//             font-family: Arial, sans-serif;
-//             overflow: hidden;
-//             background-color: #1a1a1a;
-//         }
-//         #particles-js {
-//             position: absolute;
-//             width: 100%;
-//             height: 100%;
-//             background-color: #1a1a1a;
-//             background-image: url('');
-//             background-size: cover;
-//             background-position: 50% 50%;
-//             background-repeat: no-repeat;
-//         }
-//         .content {
-//             position: absolute;
-//             top: 50%;
-//             left: 50%;
-//             transform: translate(-50%, -50%);
-//             text-align: center;
-//             color: #ffffff;
-//             z-index: 1;
-//         }
-//         h1 {
-//             font-size: 3em;
-//             margin-bottom: 20px;
-//         }
-//         p {
-//             font-size: 1.2em;
-//         }
-//     </style>
-// </head>
-// <body>
-//     <div id="particles-js"></div>
-//     <div class="content">
-//         <h1>Bienvenido a Mi Sitio</h1>
-//         <p>Descubre un mundo de posibilidades</p>
-//     </div>
-
-//     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-//     <script>
-//         particlesJS('particles-js', {
-//             particles: {
-//                 number: { value: 80, density: { enable: true, value_area: 800 } },
-//                 color: { value: '#ffffff' },
-//                 shape: { type: 'circle', stroke: { width: 0, color: '#000000' }, polygon: { nb_sides: 5 } },
-//                 opacity: { value: 0.5, random: false, anim: { enable: false, speed: 1, opacity_min: 0.1, sync: false } },
-//                 size: { value: 3, random: true, anim: { enable: false, speed: 40, size_min: 0.1, sync: false } },
-//                 line_linked: { enable: true, distance: 150, color: '#ffffff', opacity: 0.4, width: 1 },
-//                 move: { enable: true, speed: 6, direction: 'none', random: false, straight: false, out_mode: 'out', bounce: false, attract: { enable: false, rotateX: 600, rotateY: 1200 } }
-//             },
-//             interactivity: {
-//                 detect_on: 'canvas',
-//                 events: { onhover: { enable: true, mode: 'repulse' }, onclick: { enable: true, mode: 'push' }, resize: true },
-//                 modes: { grab: { distance: 400, line_linked: { opacity: 1 } }, bubble: { distance: 400, size: 40, duration: 2, opacity: 8, speed: 3 }, repulse: { distance: 200, duration: 0.4 }, push: { particles_nb: 4 }, remove: { particles_nb: 2 } }
-//             },
-//             retina_detect: true
-//         });
-//     </script>
-// </body>
-// </html>

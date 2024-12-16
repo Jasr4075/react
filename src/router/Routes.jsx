@@ -4,6 +4,7 @@ import Login from '../pages//account/login';
 import Register from '../pages/account/register';
 import ResetPassword from '../pages/account/resetPassword';
 import ItemsPage from '../pages/itemsPage';
+import FilmesPage from '../pages/FilmesPage'
 
 const AppRoutes = () => {
     return (
@@ -14,6 +15,7 @@ const AppRoutes = () => {
                 <Route path="/login/resetPassword" element={<ResetPassword />} />
                 <Route path="/register" element={<Register />} />
                 <Route path="/items" element={<ItemsPage />} />
+                <Route path="/filmes" element={<FilmesPage />} />
             </Routes>
         </Router>
     );
