@@ -4,7 +4,7 @@ import Login from '../pages//account/login';
 import Register from '../pages/account/register';
 import ResetPassword from '../pages/account/resetPassword';
 import ItemsPage from '../pages/itemsPage';
-import FilmesPage from '../pages/FilmesPage'
+import FilmesPage from '../pages/filmesPage'
 
 const AppRoutes = () => {
     return (

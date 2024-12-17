@@ -15,7 +15,7 @@ const NavbarComponent = () => {
             {/* <Nav.Link href="/contact">Novidades</Nav.Link> */}
             {/* <Nav.Link href="/about">Sobre</Nav.Link> */}
             <Nav.Link href="/items">Venda de itens para academia</Nav.Link>
-            <Nav.Link href="/filmes">Filmes</Nav.Link>
+            <Nav.Link href="/filmes">Filmes teste</Nav.Link>
           </Nav>
           <div className="d-flex ms-auto">
             <ButtonRgbComponent className="me-2" href="/login" >Login</ButtonRgbComponent>
