@@ -6,13 +6,13 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
-import NavbarComponent from '../../components/NavbarComponent';
-import ButtonRgbComponent from '../../components/ButtonRgbComponent';
+import NavbarComponent from '../components/NavbarComponent';
+import ButtonRgbComponent from '../components/ButtonRgbComponent';
 import { Toaster, toast } from 'react-hot-toast';
-import ChatBubble from '../../components/chatBubble/ChatBubble';
-import CustomCard from '../../components/card/CustomCardComponent';
-import AccordionComponent from '../../components/accordion/accordionComponent';
-import AosInitializer from '../../plugins/aos';
+import ChatBubble from '../components/chatBubble/ChatBubble';
+import CustomCard from '../components/card/CustomCardComponent';
+import AccordionComponent from '../components/accordion/accordionComponent';
+import AosInitializer from '../plugins/aos';
 
 const Home = () => {
   const styles = {
@@ -151,11 +151,11 @@ const Home = () => {
             data-aos="fade-up"
           >
             {[
-              "./public/HomeActivoVo.png",
-              "./public/Discover.png",
-              "./public/Task.png",
-              "./public/Pending.png",
-              "./public/Exercise.png",
+              "./src/assets/HomeActivoVo.png",
+              "./src/assets/Discover.png",
+              "./src/assets/Task.png",
+              "./src/assets/Pending.png",
+              "./src/assets/Exercise.png",
             ].map((imageUrl, index) => (
               <SwiperSlide key={index}>
                 <img

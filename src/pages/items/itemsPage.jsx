@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import NavbarComponent from '../components/NavbarComponent';
-import ButtonRgbComponent from '../components/ButtonRgbComponent';
-import AosInitializer from '../plugins/aos';
+import NavbarComponent from '../../components/NavbarComponent';
+import ButtonRgbComponent from '../../components/ButtonRgbComponent';
+import AosInitializer from '../../plugins/aos';
 import { Container, Modal, Carousel } from 'react-bootstrap';
 import './ItemsPage.css';
 
