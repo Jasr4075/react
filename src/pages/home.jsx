@@ -74,7 +74,7 @@ const Home = () => {
         <Container className="h-100">
           <Row className="h-500 align-items-center">
             <Col lg={6}>
-              <h1 data-aos="fade-up">ActivoVo teste</h1>
+              <h1 data-aos="fade-up">ActivoVo</h1>
               <p data-aos="fade-up" data-aos-delay="200">
                 Bem-vindo ao seu companheiro de treino para uma vida mais saudável e ativa! Um app feito especialmente para idosos, com treinos personalizados, interface amigável e acompanhamento do seu progresso, tudo ao alcance de um toque.</p>
               <ButtonRgbComponent
