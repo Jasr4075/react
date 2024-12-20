@@ -11,14 +11,14 @@ const CustomButton = styled(Button)`
   transition: all 0.3s ease;                    /* Transición para la animación */
 
   &:hover {
-    background-color: #550a8a;                  /* Morado más oscuro al pasar el mouse */
+    background-color: #31a31a;                  /* Morado más oscuro al pasar el mouse */
     transform: scale(1.1);                      /* Escala para la animación */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);   /* Sombra al pasar el mouse */
   }
 
   &:focus {
     outline: none;                              /* Elimina el contorno cuando está en foco */
-    box-shadow: 0 0 5px #6a0dad;                /* Agrega un contorno morado */
+    box-shadow: 0 0 5px #31a31a;                /* Agrega un contorno morado */
   }
 `;
 
