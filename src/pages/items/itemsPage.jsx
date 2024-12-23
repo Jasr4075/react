@@ -3,10 +3,81 @@ import NavbarComponent from '../../components/NavbarComponent';
 import ButtonRgbComponent from '../../components/ButtonRgbComponent';
 import AosInitializer from '../../plugins/aos';
 import { Container, Modal, Carousel } from 'react-bootstrap';
-import './ItemsPage.css';
+import styled from 'styled-components';
+
+const ItemsPageStyled = styled.div`
+    .items-page-container {
+        padding: 20px;
+        font-family: Arial, sans-serif;
+    }
+
+    .items-page-title {
+        font-size: 2rem;
+        margin-bottom: 20px;
+        color: #333;
+    }
+
+    .loading-message,
+    .error-message {
+        font-size: 1.2rem;
+        color: #777;
+        text-align: center;
+    }
+
+    .items-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 20px;
+    }
+
+    .item-card {
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        padding: 16px;
+        text-align: center;
+        background-color: #f9f9f9;
+        transition: transform 0.3s, box-shadow 0.3s;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .item-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .item-image {
+        max-width: 100%;
+        border-radius: 4px;
+        margin-bottom: 10px;
+        max-height: 100px;
+        max-width: 100px;
+    }
+
+    .item-name {
+        font-size: 1.2em;
+        margin: 10px 0;
+        color: #222;
+    }
+
+    .item-price,
+    .item-category {
+        margin: 5px 0;
+        color: #555;
+    }
+
+    .item-price strong,
+    .item-category strong {
+        color: #000;
+    }
+
+    .buttom {
+        margin-top: auto;
+    }
+`;
 
 const ItemsPage = () => {
-
     const [items, setItems] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
@@ -43,7 +114,7 @@ const ItemsPage = () => {
     };
 
     return (
-        <>
+        <ItemsPageStyled>
             <AosInitializer />
             <NavbarComponent />
             <Container className="items-page-container">
@@ -59,13 +130,12 @@ const ItemsPage = () => {
                                     src={item.thumbnail}
                                     alt={item.title}
                                     className="item-image"
-                                    style={{ maxWidth: '100px', maxHeight: '100px' }}
                                 />
                                 <h2 className="item-name">{item.title}</h2>
                                 <p className="item-price">
                                     <strong>Preço:</strong> R$ {item.price.toFixed(2)}
                                 </p>
-                                <ButtonRgbComponent onClick={() => handleShowDetails(item)}>
+                                <ButtonRgbComponent className="buttom" onClick={() => handleShowDetails(item)}>
                                     Mais detalhes
                                 </ButtonRgbComponent>
                             </div>
@@ -116,7 +186,7 @@ const ItemsPage = () => {
                     </Modal.Footer>
                 </Modal>
             )}
-        </>
+        </ItemsPageStyled>
     );
 };
 

@@ -10,32 +10,34 @@ import Gallery from "../components/home/Gallery";
 import FeatureCards from "../components/home/FeatureCards";
 import AccordionComponent from "../components/accordionComponent";
 
-const Hero = styled.header`
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: left;
-  background: linear-gradient(45deg, #4b79a1, #283e51);
-  color: white;
-`;
+const StyledComponents = {
+  Hero: styled.header`
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: left;
+    background:
+     linear-gradient(45deg, #4b79a1, #283e51);
+    color: white;
+  `,
+  FeaturesHeading: styled.h2`
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    text-align: center;
+  `,
+  Contact: styled.div`
+    padding: 2rem 0;
+    border-top: 1px solid #ddd;
+  `,
+  ChatBubbleContainer: styled.div`
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+  `
+};
 
-const FeaturesHeading = styled.h2`
-  font-size: 2rem;
-  margin-bottom: 2rem;
-  text-align: center;
-`;
-
-const Contact = styled.div`
-  padding: 2rem 0;
-  border-top: 1px solid #ddd;
-`;
-
-const ChatBubbleContainer = styled.div`
-  margin-top: 2rem;
-  display: flex;
-  justify-content: center;
-`;
+const { Hero, FeaturesHeading, Contact, ChatBubbleContainer } = StyledComponents;
 
 const Home = () => {
   return (
