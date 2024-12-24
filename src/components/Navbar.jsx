@@ -1,7 +1,7 @@
 import { Navbar, Nav, Container } from 'react-bootstrap';
 import ButtonRgbComponent from './ButtonRgbComponent';
 
-const NavbarComponent = () => {
+const NavbarComp = () => {
   return (
     <Navbar bg="dark" variant="dark" expand="lg" fixed="top">
       <Container>
@@ -27,4 +27,4 @@ const NavbarComponent = () => {
   );
 };
 
-export default NavbarComponent;
+export default NavbarComp;

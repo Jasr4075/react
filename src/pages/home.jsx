@@ -1,14 +1,13 @@
-import React from "react";
 import styled from "styled-components";
 import { Container } from "react-bootstrap";
 import { Toaster, toast } from "react-hot-toast";
 import AosInitializer from "../plugins/aos";
-import NavbarComponent from "../components/NavbarComponent";
+import NavbarComp from "../components/Navbar";
 import ButtonRgbComponent from "../components/ButtonRgbComponent";
 import ChatBubble from "../components/ChatBubble";
 import Gallery from "../components/home/Gallery";
 import FeatureCards from "../components/home/FeatureCards";
-import AccordionComponent from "../components/accordionComponent";
+import AccordionComp from "../components/Accordion";
 
 const StyledComponents = {
   Hero: styled.header`
@@ -44,7 +43,7 @@ const Home = () => {
     <>
       <AosInitializer />
 
-      <NavbarComponent />
+      <NavbarComp />
       <Hero id="intro">
         <Container className="h-100 d-flex align-items-center">
           <div>
@@ -75,7 +74,7 @@ const Home = () => {
       <Gallery id="gallery" />
 
       <Contact id="contact">
-        <AccordionComponent />
+        <AccordionComp />
         <ChatBubbleContainer>
           <ChatBubble />
         </ChatBubbleContainer>

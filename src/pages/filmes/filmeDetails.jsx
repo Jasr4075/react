@@ -1,7 +1,7 @@
 import React from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { Container, Carousel, Row, Col } from 'react-bootstrap';
-import NavbarComponent from '../../components/NavbarComponent';
+import NavbarComp from '../../components/Navbar';
 import ButtonRgbComponent from '../../components/ButtonRgbComponent';
 
 const FilmeDetails = () => {
@@ -43,7 +43,7 @@ const FilmeDetails = () => {
 
     return (
         <>
-            <NavbarComponent />
+            <NavbarComp />
             <Container className="details-page-container">
                 <Row className="mt-5">
                     <Col md={8} className="mx-auto">

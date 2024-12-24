@@ -1,5 +1,6 @@
 import { Button } from "react-bootstrap";
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
 const CustomButton = styled(Button)`
   background-color: ##4169E1;                    /* Morado oscuro */
@@ -29,5 +30,8 @@ const ButtonRgbComponent = ({ children, ...props }) => {
     </CustomButton>
   );
 }
+ButtonRgbComponent.propTypes = {
+  children: PropTypes.node.isRequired,
+};
 
 export default ButtonRgbComponent;

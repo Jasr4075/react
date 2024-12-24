@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import NavbarComponent from "../../components/NavbarComponent";
+import NavbarComp from "../../components/Navbar";
 import ButtonRgbComponent from "../../components/ButtonRgbComponent";
 import AosInitializer from "../../plugins/aos";
 import { Container } from "react-bootstrap";
@@ -123,7 +123,7 @@ const FilmesPage = () => {
     return (
     <ItemsPageStyled>
             <AosInitializer />
-            <NavbarComponent />
+            <NavbarComp />
             <Container className="items-page-container">
         <br />
         <br />

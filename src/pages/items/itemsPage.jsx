@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import NavbarComponent from '../../components/NavbarComponent';
+import { useEffect, useState } from 'react';
+import NavbarComp from '../../components/Navbar';
 import ButtonRgbComponent from '../../components/ButtonRgbComponent';
 import AosInitializer from '../../plugins/aos';
 import { Container, Modal, Carousel } from 'react-bootstrap';
@@ -116,7 +116,7 @@ const ItemsPage = () => {
     return (
         <ItemsPageStyled>
             <AosInitializer />
-            <NavbarComponent />
+            <NavbarComp />
             <Container className="items-page-container">
                 <br /><br />
                 <h1 className="items-page-title">Itens de academia disponíveis</h1>

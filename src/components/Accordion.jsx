@@ -1,6 +1,6 @@
 import { Accordion } from "react-bootstrap";
 
-const AccordionComponent =() => {
+const AccordionComp =() => {
     return (
         <div>
         <Accordion>
@@ -33,4 +33,4 @@ const AccordionComponent =() => {
     )
 }
 
-export default AccordionComponent;
+export default AccordionComp;
