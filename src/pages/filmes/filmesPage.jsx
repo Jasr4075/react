@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import NavbarComp from "../../components/Navbar";
 import ButtonRgbComponent from "../../components/ButtonRgbComponent";
-import AosInitializer from "../../plugins/aos";
+import AosInitializer from "../../utils/aos";
 import { Container } from "react-bootstrap";
 import styled from "styled-components";
 

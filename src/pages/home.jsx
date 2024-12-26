@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { Container } from "react-bootstrap";
 import { Toaster, toast } from "react-hot-toast";
-import AosInitializer from "../plugins/aos";
+import AosInitializer from "../utils/aos";
 import NavbarComp from "../components/Navbar";
 import ButtonRgbComponent from "../components/ButtonRgbComponent";
 import ChatBubble from "../components/ChatBubble";
