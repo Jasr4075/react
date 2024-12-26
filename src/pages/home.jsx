@@ -43,8 +43,6 @@ const Home = () => {
   return (
     <HomeStyled>
       <AosInitializer />
-
-      <NavbarComp />
       <header className="hero" id="intro">
         <Container className="h-100 d-flex align-items-center">
           <div>

@@ -43,7 +43,6 @@ const FilmeDetails = () => {
 
     return (
         <>
-            <NavbarComp />
             <Container className="details-page-container">
                 <Row className="mt-5">
                     <Col md={8} className="mx-auto">

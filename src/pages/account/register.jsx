@@ -33,7 +33,6 @@ const Register = () => {
 
     return (
         <>
-            <NavbarComp />
             <Container className="py-5">
                 <Row className="justify-content-center">
                     <Col md={6}>

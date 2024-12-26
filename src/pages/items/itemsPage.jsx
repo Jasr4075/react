@@ -116,7 +116,6 @@ const ItemsPage = () => {
     return (
         <ItemsPageStyled>
             <AosInitializer />
-            <NavbarComp />
             <Container className="items-page-container">
                 <br /><br />
                 <h1 className="items-page-title">Itens de academia disponíveis</h1>

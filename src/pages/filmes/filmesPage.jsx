@@ -123,7 +123,6 @@ const FilmesPage = () => {
     return (
     <ItemsPageStyled>
             <AosInitializer />
-            <NavbarComp />
             <Container className="items-page-container">
         <br />
         <br />
