@@ -1,6 +1,5 @@
 import { Container, Row, Col, Form } from 'react-bootstrap';
 import { Toaster, toast } from 'react-hot-toast';
-import NavbarComp from '../../components/Navbar';
 import ButtonRgbComponent from '../../components/ButtonRgbComponent';
 
 const Login = () => {

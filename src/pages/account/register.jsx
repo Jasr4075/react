@@ -1,5 +1,4 @@
 import { Container, Row, Col, Form } from 'react-bootstrap';
-import NavbarComp from '../../components/Navbar';
 import ButtonRgbComponent from '../../components/ButtonRgbComponent';
 import { Toaster, toast } from 'react-hot-toast';
 

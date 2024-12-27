@@ -1,7 +1,6 @@
 import React from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { Container, Carousel, Row, Col } from 'react-bootstrap';
-import NavbarComp from '../../components/Navbar';
 import ButtonRgbComponent from '../../components/ButtonRgbComponent';
 
 const FilmeDetails = () => {

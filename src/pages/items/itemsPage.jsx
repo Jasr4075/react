@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react';
-import NavbarComp from '../../components/Navbar';
 import ButtonRgbComponent from '../../components/ButtonRgbComponent';
 import AosInitializer from '../../utils/aos';
 import { Container, Modal, Carousel } from 'react-bootstrap';
