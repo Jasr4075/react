@@ -64,7 +64,7 @@ const Home = () => {
         </Container>
       </header>
 
-      <Container id="Características" className="py-5">
+      <Container id="características" className="py-5">
         <h2 className="featuresheading" data-aos="fade-up">Características</h2>
         <FeatureCards />
       </Container>
