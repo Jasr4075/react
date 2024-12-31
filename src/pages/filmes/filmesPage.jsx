@@ -5,7 +5,7 @@ import AosInitializer from "../../utils/aos";
 import { Container } from "react-bootstrap";
 import styled from "styled-components";
 
-const ItemsPageStyled = styled.div`
+const FilmesPageStyled = styled.div`
   .items-page-container {
     padding: 20px;
   }
@@ -120,7 +120,7 @@ const FilmesPage = () => {
     }, []);
 
     return (
-    <ItemsPageStyled>
+    <FilmesPageStyled>
             <AosInitializer />
             <Container className="items-page-container">
         <br />
@@ -151,7 +151,7 @@ const FilmesPage = () => {
                     </div>
                 )}
             </Container>
-    </ItemsPageStyled>
+    </FilmesPageStyled>
     );
 };
 
