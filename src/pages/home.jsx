@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { Container } from "react-bootstrap";
 import { Toaster, toast } from "react-hot-toast";
 import AosInitializer from "../utils/aos";
-import ButtonRgbComponent from "../components/ButtonRgbComponent";
+import CButton from "../components/CustomButton";
 import ChatBubble from "../components/ChatBubble";
 import Gallery from "../components/home/Gallery";
 import FeatureCards from "../components/home/FeatureCards";
@@ -53,12 +53,12 @@ const Home = () => {
               progresso, tudo ao alcance de um toque.
             </p>
             <div data-aos="fade-up" data-aos-delay="400">
-              <ButtonRgbComponent
-                href="/#Características"
+              <CButton
+                href="/#características"
                 onClick={() => toast.success("Baixando APP...")}
               >
                 Baixar Agora
-              </ButtonRgbComponent>
+              </CButton>
             </div>
           </div>
         </Container>

@@ -23,15 +23,15 @@ const CustomButton = styled(Button)`
   }
 `;
 
-const ButtonRgbComponent = ({ children, ...props }) => {
+const CButton = ({ children, ...props }) => {
   return (
     <CustomButton {...props}>
       {children}
     </CustomButton>
   );
 }
-ButtonRgbComponent.propTypes = {
+CButton.propTypes = {
   children: PropTypes.node.isRequired,
 };
 
-export default ButtonRgbComponent;
+export default CButton;

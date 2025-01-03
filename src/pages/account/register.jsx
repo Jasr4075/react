@@ -1,5 +1,5 @@
 import { Container, Row, Col, Form } from 'react-bootstrap';
-import ButtonRgbComponent from '../../components/ButtonRgbComponent';
+import CButton from '../../components/CustomButton';
 import { Toaster, toast } from 'react-hot-toast';
 
 const Register = () => {
@@ -76,9 +76,9 @@ const Register = () => {
                                     required
                                 />
                             </div>
-                            <ButtonRgbComponent type="submit" style={styles.button}>
+                            <CButton type="submit" style={styles.button}>
                                 Registrar-se
-                            </ButtonRgbComponent>
+                            </CButton>
                             <div className="text-center mt-3">
                                 <p>
                                     Já tem uma conta?{' '}

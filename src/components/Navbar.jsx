@@ -1,5 +1,5 @@
 import { Navbar, Nav, Container } from 'react-bootstrap';
-import ButtonRgbComponent from './ButtonRgbComponent';
+import CButton from './CustomButton';
 
 const NavbarComp = () => {
   return (
@@ -18,8 +18,8 @@ const NavbarComp = () => {
             <Nav.Link href="/filmes">Filmes teste</Nav.Link>
           </Nav>
           <div className="d-flex ms-auto">
-            <ButtonRgbComponent className="me-2" href="/login" >Login</ButtonRgbComponent>
-            <ButtonRgbComponent href="/register">Registrar</ButtonRgbComponent>
+            <CButton className="me-2" href="/account/login" >Login</CButton>
+            <CButton href="/account/register">Registrar</CButton>
           </div>
         </Navbar.Collapse>
       </Container>

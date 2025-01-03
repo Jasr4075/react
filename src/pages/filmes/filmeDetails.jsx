@@ -1,7 +1,7 @@
 import React from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { Container, Carousel, Row, Col } from 'react-bootstrap';
-import ButtonRgbComponent from '../../components/ButtonRgbComponent';
+import CButton from '../../components/CustomButton';
 
 const FilmeDetails = () => {
     const { id } = useParams();
@@ -67,7 +67,7 @@ const FilmeDetails = () => {
                             </p>
                         </div>
                         <div className="text-center mt-4">
-                            <ButtonRgbComponent onClick={() => navigate(-1)}>Voltar</ButtonRgbComponent>
+                            <CButton onClick={() => navigate(-1)}>Voltar</CButton>
                         </div>
                     </Col>
                 </Row>

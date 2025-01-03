@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import ButtonRgbComponent from "../../components/ButtonRgbComponent";
+import CButton from "../../components/CustomButton";
 import AosInitializer from "../../utils/aos";
 import { Container, Modal, Carousel } from "react-bootstrap";
 import styled from "styled-components";
@@ -142,12 +142,12 @@ const ItemsPage = () => {
                 <p className="item-price">
                   <strong>Preço:</strong> R$ {item.price.toFixed(2)}
                 </p>
-                <ButtonRgbComponent
+                <CButton
                   className="buttom"
                   onClick={() => handleShowDetails(item)}
                 >
                   Mais detalhes
-                </ButtonRgbComponent>
+                </CButton>
               </div>
             ))}
           </div>
@@ -199,9 +199,9 @@ const ItemsPage = () => {
             </p>
           </Modal.Body>
           <Modal.Footer>
-            <ButtonRgbComponent onClick={handleCloseDetails}>
+            <CButton onClick={handleCloseDetails}>
               Fechar
-            </ButtonRgbComponent>
+            </CButton>
           </Modal.Footer>
         </Modal>
       )}

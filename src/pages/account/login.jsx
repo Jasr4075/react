@@ -1,6 +1,6 @@
 import { Container, Row, Col, Form } from 'react-bootstrap';
 import { Toaster, toast } from 'react-hot-toast';
-import ButtonRgbComponent from '../../components/ButtonRgbComponent';
+import CButton from '../../components/CustomButton';
 
 const Login = () => {
     const handleLogin = (e) => {
@@ -64,12 +64,12 @@ const Login = () => {
                                     Esqueceu sua senha?
                                 </a>
                             </div>
-                            <ButtonRgbComponent
+                            <CButton
                                 type="submit"
                                 style={styles.button}
                             >
                                 Entrar
-                            </ButtonRgbComponent>
+                            </CButton>
                             <div style={styles.textCenter}>
                                 <p>
                                     Não tem uma conta?{' '}

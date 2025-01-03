@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import ButtonRgbComponent from "../../components/ButtonRgbComponent";
+import CButton from "../../components/CustomButton";
 import AosInitializer from "../../utils/aos";
 import { Container } from "react-bootstrap";
 import styled from "styled-components";
@@ -141,11 +141,11 @@ const FilmesPage = () => {
                 <p className="item-rating">
                   <strong>Avaliação:</strong> {movie.vote_average}/10
                 </p>
-                <ButtonRgbComponent
+                <CButton
                 onClick={() => navigate(`/detalhes/${movie.id}`)}
                 >
                   Mais detalhes
-                </ButtonRgbComponent>
+                </CButton>
               </div>
                         ))}
                     </div>
