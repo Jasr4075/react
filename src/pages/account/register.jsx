@@ -82,7 +82,7 @@ const Register = () => {
                             <div className="text-center mt-3">
                                 <p>
                                     Já tem uma conta?{' '}
-                                    <a href="/login" style={styles.link}>
+                                    <a href="/account/login" style={styles.link}>
                                         Faça login
                                     </a>
                                 </p>
