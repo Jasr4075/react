@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import CButton from "../../components/CustomButton";
-import AosInitializer from "../../utils/aos";
+import AosInitializer from "../../services/utils/aos";
 import { Container } from "react-bootstrap";
 import styled from "styled-components";
 
@@ -110,7 +110,7 @@ const ItemsPage = () => {
             {items.map((item) => (
               <div key={item.id} className="item-card" data-aos="fade-up">
                 <img
-                  src={item.thumbnail}
+                  src={item.thumbnail.replace('I.jpg', 'J.jpg')}
                   alt={item.title}
                   className="item-image"
                 />

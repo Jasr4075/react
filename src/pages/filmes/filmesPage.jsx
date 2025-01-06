@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import CButton from "../../components/CustomButton";
-import AosInitializer from "../../utils/aos";
+import AosInitializer from "../../services/utils/aos";
 import { Container } from "react-bootstrap";
 import styled from "styled-components";
 
