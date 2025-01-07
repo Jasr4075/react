@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Container, Row, Col, Form } from 'react-bootstrap';
 import CButton from '../../components/CustomButton';
 import { Toaster, toast } from 'react-hot-toast';
@@ -23,7 +23,6 @@ const Register = () => {
                 password
             });
             toast.success('Registro bem-sucedido. Bem-vindo!');
-            // You might want to redirect the user or update the app state here
         } catch (error) {
             toast.error(error.response?.data?.message || 'Erro ao registrar. Tente novamente.');
         }

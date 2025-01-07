@@ -1,11 +1,28 @@
+import { useState } from 'react';
 import { Container, Row, Col, Form } from 'react-bootstrap';
 import { Toaster, toast } from 'react-hot-toast';
 import CButton from '../../components/CustomButton';
+import axios from 'axios';
 
 const Login = () => {
-    const handleLogin = (e) => {
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+
+    const handleLogin = async (e) => {
         e.preventDefault();
-        toast.success('Login bem-sucedido');
+        try {
+            const response = await axios.post('http://localhost:3000/api/users/login', {
+                email,
+                password
+            });
+            toast.success('Login bem-sucedido');
+            // Here you would typically store the token and redirect the user
+            console.log('Token:', response.data.token);
+            // Example: localStorage.setItem('token', response.data.token);
+            // Example: history.push('/dashboard');
+        } catch (error) {
+            toast.error(error.response?.data?.message || 'Erro ao fazer login. Tente novamente.');
+        }
     };
 
     const styles = {
@@ -52,11 +69,23 @@ const Login = () => {
                             <h2 style={styles.heading}>Bem-vindo de volta</h2>
                             <Form.Group controlId="formBasicEmail" style={styles.formControl}>
                                 <Form.Label style={styles.formLabel}>Email</Form.Label>
-                                <Form.Control type="email" placeholder="Digite seu email" required />
+                                <Form.Control
+                                    type="email"
+                                    placeholder="Digite seu email"
+                                    required
+                                    value={email}
+                                    onChange={(e) => setEmail(e.target.value)}
+                                />
                             </Form.Group>
                             <Form.Group controlId="formBasicPassword" style={styles.formControl}>
                                 <Form.Label style={styles.formLabel}>Senha</Form.Label>
-                                <Form.Control type="password" placeholder="Digite sua senha" required />
+                                <Form.Control
+                                    type="password"
+                                    placeholder="Digite sua senha"
+                                    required
+                                    value={password}
+                                    onChange={(e) => setPassword(e.target.value)}
+                                />
                             </Form.Group>
                             <div className="d-flex justify-content-between align-items-center mb-4">
                                 <Form.Check type="checkbox" label="Lembrar-me" />
@@ -88,3 +117,4 @@ const Login = () => {
 };
 
 export default Login;
+
