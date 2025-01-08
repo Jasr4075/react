@@ -5,6 +5,7 @@ import FilmesPage from "../pages/filmes/filmesPage";
 import FilmeDetails from "../pages/filmes/filmeDetails";
 import AccountRoutes from "./accountRoutes";
 import PaymentsRoutes from "./PaymentsRoutes";
+import WorkoutCustomization from "../pages/home/Features/workoutCustomization";
 
 const AppRoutes = () => {
   return (
@@ -16,6 +17,7 @@ const AppRoutes = () => {
         <Route path="/payments/*" element={<PaymentsRoutes />} />
         <Route path="/filmes/*" element={<FilmesPage />} />
         <Route path="/filmedetails/:id" element={<FilmeDetails />} />
+        <Route path="/home/*" element={<WorkoutCustomization />} />
       </Routes>
     </Router>
   );

@@ -17,10 +17,7 @@ const CustomCard = ({
   title,
   subtitle,
   text,
-  link1,
-  link1Text,
-  link2,
-  link2Text,
+  links,
   animation,
 }) => {
   return (
@@ -33,8 +30,11 @@ const CustomCard = ({
             <Card.Text>{text}</Card.Text>
           </div>
           <div>
-            <Card.Link href={link1}>{link1Text}</Card.Link>
-            <Card.Link href={link2}>{link2Text}</Card.Link>
+            {links.map((link, index) => (
+              <Card.Link href={link.href} key={index}>
+                {link.text}
+              </Card.Link>
+            ))}
           </div>
         </Card.Body>
       </StyledCard>
@@ -46,19 +46,16 @@ CustomCard.propTypes = {
   title: PropTypes.string.isRequired,
   subtitle: PropTypes.string,
   text: PropTypes.string.isRequired,
-  link1: PropTypes.string,
-  link1Text: PropTypes.string,
-  link2: PropTypes.string,
-  link2Text: PropTypes.string,
+  links: PropTypes.arrayOf(PropTypes.shape({
+    href: PropTypes.string.isRequired,
+    text: PropTypes.string.isRequired
+  })).isRequired,
   animation: PropTypes.string,
 };
 
 CustomCard.defaultProps = {
   subtitle: "",
-  link1: "#",
-  link1Text: "Link 1",
-  link2: "#",
-  link2Text: "Link 2",
+  links: [{ href: "#", text: "Link 1" }, { href: "#", text: "Link 2" }], // Links por defecto
   animation: "fade-up",
 };
 

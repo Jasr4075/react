@@ -66,6 +66,7 @@ const ItemsPageStyled = styled.div`
   }
   .buttom {
     margin-top: auto;
+    justify-content: center;
   }
 `;
 
@@ -110,7 +111,7 @@ const ItemsPage = () => {
             {items.map((item) => (
               <div key={item.id} className="item-card" data-aos="fade-up">
                 <img
-                  src={item.thumbnail.replace('I.jpg', 'J.jpg')}
+                  src={item.thumbnail.replace("I.jpg", "J.jpg")}
                   alt={item.title}
                   className="item-image"
                 />
