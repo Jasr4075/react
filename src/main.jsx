@@ -6,7 +6,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import styled from "styled-components";
 
 const MainContent = styled.div`
-  padding-top: 56px;
+  padding-top: 45px;
 `;
 
 ReactDOM.createRoot(document.getElementById("root")).render(

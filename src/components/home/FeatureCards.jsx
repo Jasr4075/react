@@ -8,8 +8,7 @@ const FeatureCards = () => {
       subtitle: "Treinos Personalizados para uma Vida Saudável",
       text: "O aplicativo oferece treinos adaptados às necessidades específicas de idosos, considerando níveis de mobilidade, condições de saúde e objetivos pessoais. Os exercícios podem ser ajustados conforme o progresso do usuário.",
       links: [
-        { href: "/acount/login", text: "Link 1" },
-        { href: "#", text: "Link 2" }
+        { href: "/home/workout-customization", text: "Treinos" },
       ]
     },
     {
@@ -18,7 +17,6 @@ const FeatureCards = () => {
       text: "Uma interface projetada para fácil navegação, com botões grandes, fontes legíveis e opções de assistência por áudio para garantir que os idosos usem o app com conforto e segurança.",
       links: [
         { href: "#", text: "Link 1" },
-        { href: "#", text: "Link 2" }
       ]
     },
     {
@@ -27,7 +25,6 @@ const FeatureCards = () => {
       text: "O app permite o acompanhamento do progresso, oferecendo relatórios simples sobre frequência de treinos, calorias gastas e metas alcançadas. Possui também lembretes amigáveis para manter a regularidade.",
       links: [
         { href: "#", text: "Link 1" },
-        { href: "#", text: "Link 2" }
       ]
     }
   ];

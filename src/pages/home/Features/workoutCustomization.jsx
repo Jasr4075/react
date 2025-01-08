@@ -45,12 +45,6 @@ const WorkoutCustomizationStyled = styled.div`
             font-size: 1rem;
         }
     }
-    .Links {
-        margin-top: 20px;
-        justify-content: center;
-        gap: 20px;
-        display: flex;
-    }
 `;
 
 const WorkoutCustomization = () => {
@@ -77,10 +71,10 @@ const WorkoutCustomization = () => {
                             <img src="/src/assets/HomeActivoVo.png" alt="Exemplo de treino 2" />
                             <p>Exemplo de treino 2</p>
                         </div>
-                    </div>
-                    <div className="Links">
-                        <CButton to="/link1">Saiba mais</CButton>
-                        <CButton to="/link2">Entre em contato</CButton>
+                        <div className="Example">
+                            <img src="/src/assets/HomeActivoVo.png" alt="Exemplo de treino 2" />
+                            <p>Exemplo de treino 2</p>
+                        </div>
                     </div>
                 </div>
             </div>

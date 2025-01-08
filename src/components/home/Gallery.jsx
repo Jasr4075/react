@@ -6,9 +6,18 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 
-const GalleryHeading = styled.h2`
-  font-size: 2rem;
-  margin-bottom: 2rem;
+const GalleryStyled = styled.section`
+  .GalleryHeading {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+  .GalleryImg {
+    border-radius: 27px;
+    max-height: 500px;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto;
+  }
 `;
 
 const GalleryImg = styled.img`
@@ -30,28 +39,32 @@ const Gallery = () => {
 
   return (
     <section id="gallery" className="py-4">
-      <Container>
-        <GalleryHeading data-aos="fade-up">Galeria</GalleryHeading>
-        <Swiper
-          modules={[Navigation, Pagination, EffectCoverflow]}
-          spaceBetween={30}
-          slidesPerView={1}
-          pagination={{ clickable: true }}
-          navigation
-          className="mySwiper"
-          data-aos="fade-up"
-        >
-          {images.map((imageUrl, index) => (
-            <SwiperSlide key={index}>
-              <GalleryImg
-                src={imageUrl}
-                alt={`Imagem ${index + 1}`}
-                loading="lazy"
-              />
-            </SwiperSlide>
-          ))}
-        </Swiper>
-      </Container>
+      <GalleryStyled>
+        <Container>
+        <br />
+        <br />
+          <h2 className="GalleryHeading" data-aos="fade-up">Galeria</h2>
+          <Swiper
+            modules={[Navigation, Pagination, EffectCoverflow]}
+            spaceBetween={30}
+            slidesPerView={3}
+            pagination={{ clickable: true }}
+            navigation
+            className="mySwiper"
+            data-aos="fade-up"
+          >
+            {images.map((imageUrl, index) => (
+              <SwiperSlide key={index}>
+                <GalleryImg
+                  src={imageUrl}
+                  alt={`Imagem ${index + 1}`}
+                  loading="lazy"
+                />
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </Container>
+      </GalleryStyled>
     </section>
   );
 };
