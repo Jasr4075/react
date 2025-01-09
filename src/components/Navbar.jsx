@@ -9,7 +9,7 @@ const NavbarComp = () => {
         <Navbar.Toggle aria-controls="navbar-nav" />
         <Navbar.Collapse id="navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link href="/#características">Características </Nav.Link>
+            <Nav.Link href="/#caracteristicas">Características </Nav.Link>
             <Nav.Link href="/#gallery">Galeria</Nav.Link>
             {/* <Nav.Link href="/contact">Suporte</Nav.Link> */}
             {/* <Nav.Link href="/contact">Novidades</Nav.Link> */}

@@ -9,7 +9,6 @@ import FeatureCards from "../../components/home/FeatureCards";
 import AccordionComp from "../../components/Accordion";
 
 const HomeStyled = styled.div`
-
   .hero {
     min-height: 100vh;
     display: flex;
@@ -38,6 +37,32 @@ const HomeStyled = styled.div`
   }
 `;
 
+const downloadApp = () => {
+  const url = '../../assets/app-release.apk';
+
+  fetch(url)
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('Error al descargar el archivo');
+      }
+      toast.success("Baixando APP...");
+      return response.blob();
+    })
+    .then(blob => {
+      const downloadUrl = window.URL.createObjectURL(blob);
+      const link = document.createElement('a');
+      link.href = downloadUrl;
+      link.download = 'app-release.apk'; // Nombre de archivo sugerido
+      document.body.appendChild(link);
+      link.click();
+      link.remove();
+    })
+    .catch(error => {
+      toast.error("Error al descargar o APP");
+      console.error("Error en la descarga:", error);
+    });
+};
+
 const Home = () => {
   return (
     <HomeStyled>
@@ -53,22 +78,16 @@ const Home = () => {
               progresso, tudo ao alcance de um toque.
             </p>
             <div data-aos="fade-up" data-aos-delay="400">
-              <CButton
-                href="/#características"
-                onClick={() => toast.success("Baixando APP...")}
-              >
+              <CButton onClick={downloadApp}>
                 Baixar Agora
               </CButton>
+              <CButton href="/account/login">Seja Premium</CButton>
             </div>
           </div>
         </Container>
       </header>
 
-      <Container id="características" className="py-5">
-        <h2 className="featuresheading" data-aos="fade-up">Características</h2>
-        <FeatureCards />
-      </Container>
-
+      <FeatureCards id="caracteristicas" />
       <Gallery id="gallery" />
 
       <section className="contact" id="contact">

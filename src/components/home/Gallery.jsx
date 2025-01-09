@@ -10,6 +10,7 @@ const GalleryStyled = styled.section`
   .GalleryHeading {
     font-size: 2rem;
     margin-bottom: 2rem;
+    text-align: center;
   }
   .GalleryImg {
     border-radius: 27px;
@@ -18,14 +19,6 @@ const GalleryStyled = styled.section`
     display: block;
     margin: 0 auto;
   }
-`;
-
-const GalleryImg = styled.img`
-  border-radius: 27px;
-  max-height: 500px;
-  object-fit: cover;
-  display: block;
-  margin: 0 auto;
 `;
 
 const Gallery = () => {
@@ -47,7 +40,7 @@ const Gallery = () => {
           <Swiper
             modules={[Navigation, Pagination, EffectCoverflow]}
             spaceBetween={30}
-            slidesPerView={3}
+            slidesPerView={window.innerWidth > 768 ? 3 : 1}
             pagination={{ clickable: true }}
             navigation
             className="mySwiper"
@@ -55,7 +48,8 @@ const Gallery = () => {
           >
             {images.map((imageUrl, index) => (
               <SwiperSlide key={index}>
-                <GalleryImg
+                <img
+                  className="GalleryImg"
                   src={imageUrl}
                   alt={`Imagem ${index + 1}`}
                   loading="lazy"
