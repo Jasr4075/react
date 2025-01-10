@@ -1,5 +1,5 @@
 import { Container, Row } from "react-bootstrap";
-import CustomCard from "../CustomCardComponent";
+import CustomCard from "../CustomCard";
 
 const FeatureCards = () => {
   const cards = [

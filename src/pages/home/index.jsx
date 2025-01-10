@@ -6,7 +6,7 @@ import CButton from "../../components/CustomButton";
 import ChatBubble from "../../components/ChatBubble";
 import Gallery from "../../components/home/Gallery";
 import FeatureCards from "../../components/home/FeatureCards";
-import AccordionComp from "../../components/Accordion";
+import AccordionComp from "../../components//home/Accordion";
 
 const HomeStyled = styled.div`
   .hero {
@@ -78,7 +78,7 @@ const Home = () => {
               progresso, tudo ao alcance de um toque.
             </p>
             <div data-aos="fade-up" data-aos-delay="400">
-              <CButton onClick={downloadApp}>
+              <CButton className="me-2" onClick={downloadApp}>
                 Baixar Agora
               </CButton>
               <CButton href="/account/login">Seja Premium</CButton>
