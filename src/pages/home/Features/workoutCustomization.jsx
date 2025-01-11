@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import CButton from "../../../components/CustomButton";
 
 const WorkoutCustomizationStyled = styled.div`
   .WorkoutCustomizationContainer {

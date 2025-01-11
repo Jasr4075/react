@@ -1,6 +1,6 @@
-import React from 'react';
 import { Card, Col } from 'react-bootstrap';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
 const StyledCard = styled(Card)`
   transition: all 0.3s ease;
@@ -40,6 +40,18 @@ const CustomCard = ({
       </StyledCard>
     </Col>
   );
+};
+CustomCard.propTypes = {
+  title: PropTypes.string,
+  subtitle: PropTypes.string,
+  text: PropTypes.string,
+  links: PropTypes.arrayOf(
+    PropTypes.shape({
+      href: PropTypes.string,
+      text: PropTypes.string
+    })
+  ),
+  animation: PropTypes.string
 };
 
 export default CustomCard;
