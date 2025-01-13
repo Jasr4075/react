@@ -1,13 +1,14 @@
 import { Container, Row } from "react-bootstrap";
 import CustomCard from "../../components/CustomCard";
+import AosInitializer from "../../services/utils/aos";
 
-const Subscription = () => {
+const SubscriptionC = () => {
     const cards = [
         {
             title: "Personalização de Treinos",
             subtitle: "Treinos Personalizados para uma Vida Saudável",
             text: "O aplicativo oferece treinos adaptados às necessidades específicas de idosos, considerando níveis de mobilidade, condições de saúde e objetivos pessoais. Os exercícios podem ser ajustados conforme o progresso do usuário.",
-            links: [{ href: "/home/workout-customization", text: "Treinos" }],
+            links: [{ href: "#", text: "Treinos" }],
         },
         {
             title: "Interface Intuitiva e Amigável",
@@ -24,25 +25,28 @@ const Subscription = () => {
     ];
 
     return (
-        <Container>
-            <h2 className="features-heading" data-aos="fade-up">
-                Subscription
-            </h2>
+        <>
+            <AosInitializer />
+            <Container>
+                <h2 className="features-heading" data-aos="fade-up">
+                    Subscription
+                </h2>
 
-            <Row className="justify-content-center">
-                {cards.map((card, index) => (
-                    <CustomCard
-                        key={index}
-                        title={card.title}
-                        subtitle={card.subtitle}
-                        text={card.text}
-                        links={card.links}
-                        animation="fade-right"
-                    />
-                ))}
-            </Row>
-        </Container>
+                <Row className="justify-content-center">
+                    {cards.map((card, i) => (
+                        <CustomCard
+                            key={i}
+                            title={card.title}
+                            subtitle={card.subtitle}
+                            text={card.text}
+                            links={card.links}
+                            animation="fade-right"
+                        />
+                    ))}
+                </Row>
+            </Container>
+        </>
     );
 };
 
-export default Subscription;
+export default SubscriptionC;
