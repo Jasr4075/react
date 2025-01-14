@@ -1,5 +1,5 @@
 import { Navbar, Nav, Container } from 'react-bootstrap';
-import CButton from './CustomButton';
+import CButton from './customButton';
 
 const NavbarComp = () => {
   return (

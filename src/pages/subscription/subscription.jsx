@@ -1,8 +1,9 @@
-import { Container, Row } from "react-bootstrap";
+import { Container, Row, Table } from "react-bootstrap";
 import CustomCard from "../../components/CustomCard";
 import AosInitializer from "../../services/utils/aos";
+import CheckTable from "../../components/CheckTable";
 
-const SubscriptionC = () => {
+const Subscription = () => {
     const cards = [
         {
             title: "Personalização de Treinos",
@@ -44,9 +45,19 @@ const SubscriptionC = () => {
                         />
                     ))}
                 </Row>
+                <Row className="justify-content-center">
+                    <CheckTable
+                        headers={["Features", "Basic", "Pro"]}
+                        rows={[
+                            ["Personalização de Treinos", "✔", "✔"],
+                            ["Monitoramento e Feedback", "✔", "✔"],
+                            ["Treinos Específicos", "✖", "✔"],
+                        ]}
+                    />
+                </Row>
             </Container>
         </>
     );
 };
 
-export default SubscriptionC;
+export default Subscription;

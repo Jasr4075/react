@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { Container } from "react-bootstrap";
 import { Toaster, toast } from "react-hot-toast";
 import AosInitializer from "../../services/utils/aos";
-import CButton from "../../components/CustomButton";
+import CButton from "../../components/customButton";
 import ChatBubble from "../../components/ChatBubble";
 import Gallery from "../../components/home/Gallery";
 import FeatureCards from "../../components/home/FeatureCards";
