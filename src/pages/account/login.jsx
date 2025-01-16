@@ -1,26 +1,30 @@
 import { useState } from 'react';
 import { Container, Row, Col, Form } from 'react-bootstrap';
 import { Toaster, toast } from 'react-hot-toast';
+import { useNavigate } from 'react-router-dom';
 import CButton from '../../components/CustomButton';
-import axios from 'axios';
+import axios from '../../services/axiosConfig';
 
 const Login = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const navigate = useNavigate();
 
     const handleLogin = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post('http://localhost:3000/api/users/login', {
+            const response = await axios.post('/user/login', {
                 email,
                 password
             });
+            localStorage.setItem('token', response.data.token);
+            localStorage.setItem('username', response.data.user.username);
+            const event = new Event('login');
+            window.dispatchEvent(event);
             toast.success('Login bem-sucedido');
-            // Here you would typically store the token and redirect the user
-            console.log('Token:', response.data.token);
-            // Example: localStorage.setItem('token', response.data.token);
-            // Example: history.push('/dashboard');
+            navigate('/');
         } catch (error) {
+            toast.dismiss();
             toast.error(error.response?.data?.message || 'Erro ao fazer login. Tente novamente.');
         }
     };
@@ -62,7 +66,7 @@ const Login = () => {
 
     return (
         <>
-            <Container className="py-5" >
+            <Container className="py-5">
                 <Row className="justify-content-center">
                     <Col md={4}>
                         <Form onSubmit={handleLogin} style={styles.loginForm}>
@@ -102,7 +106,7 @@ const Login = () => {
                             <div style={styles.textCenter}>
                                 <p>
                                     Não tem uma conta?{' '}
-                                    <a href="/register" style={styles.link}>
+                                    <a href="/account/register" style={styles.link}>
                                         Cadastre-se
                                     </a>
                                 </p>
@@ -117,4 +121,3 @@ const Login = () => {
 };
 
 export default Login;
-

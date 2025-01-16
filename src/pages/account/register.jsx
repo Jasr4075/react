@@ -2,29 +2,57 @@ import { useState } from 'react';
 import { Container, Row, Col, Form } from 'react-bootstrap';
 import CButton from '../../components/CustomButton';
 import { Toaster, toast } from 'react-hot-toast';
-import axios from 'axios';
+import axios from '../../services/axiosConfig';
+import { useNavigate } from 'react-router-dom';
+
 
 const Register = () => {
     const [username, setUsername] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
+    const [loading, setLoading] = useState(false);
+    const navigate = useNavigate();
+
 
     const handleRegister = async (e) => {
         e.preventDefault();
+
         if (password !== confirmPassword) {
             toast.error('As senhas não coincidem.');
             return;
         }
+
+        const emailValid = /\S+@\S+\.\S+/.test(email);
+        if (!emailValid) {
+            toast.error('Por favor, insira um e-mail válido.');
+            return;
+        }
+
+        if (password.length < 6) {
+            toast.error('A senha deve ter pelo menos 6 caracteres.');
+            return;
+        }
+
+        setLoading(true);
         try {
-            const response = await axios.post('http://localhost:3000/api/users/register', {
+            const response = await axios.post('/user/register', {
                 username,
                 email,
                 password
             });
+
             toast.success('Registro bem-sucedido. Bem-vindo!');
+            setUsername('');
+            setEmail('');
+            setPassword('');
+            setConfirmPassword('');
+            navigate('/account/login');
         } catch (error) {
-            toast.error(error.response?.data?.message || 'Erro ao registrar. Tente novamente.');
+            const errorMessage = error.response?.data?.message || 'Erro ao registrar. Tente novamente.';
+            toast.error(errorMessage);
+        } finally {
+            setLoading(false);
         }
     };
 
@@ -104,8 +132,8 @@ const Register = () => {
                                     required
                                 />
                             </div>
-                            <CButton type="submit" style={styles.button}>
-                                Registrar-se
+                            <CButton type="submit" style={styles.button} disabled={loading}>
+                                {loading ? 'Registrando...' : 'Registrar-se'}
                             </CButton>
                             <div className="text-center mt-3">
                                 <p>
@@ -125,4 +153,3 @@ const Register = () => {
 };
 
 export default Register;
-

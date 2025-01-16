@@ -81,7 +81,7 @@ const Home = () => {
               <CButton className="me-2" onClick={downloadApp}>
                 Baixar Agora
               </CButton>
-              <CButton href="/account/login">Seja Premium</CButton>
+              <CButton href="/subscription">Seja Premium</CButton>
             </div>
           </div>
         </Container>

@@ -8,7 +8,7 @@ const StyledCard = styled(Card)`
 
   &.hover-effect:hover {
     transform: scale(1.05);
-    border-color: #007bff;
+    border-color: #0eb5e7;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   }
 `;
@@ -17,6 +17,7 @@ const CustomCard = ({
   title = "Default Title",
   subtitle = "Default Subtitle",
   text = "Default Text",
+  value = "Default Value",
   links = [],
   animation = "fade-right"
 }) => {
@@ -28,6 +29,7 @@ const CustomCard = ({
             <Card.Title>{title}</Card.Title>
             <Card.Subtitle className="mb-2 text-muted">{subtitle}</Card.Subtitle>
             <Card.Text>{text}</Card.Text>
+            <Card.Text>{value}</Card.Text>
           </div>
           <div>
             {links.map((link, index) => (
@@ -45,6 +47,7 @@ CustomCard.propTypes = {
   title: PropTypes.string,
   subtitle: PropTypes.string,
   text: PropTypes.string,
+  value: PropTypes.string,
   links: PropTypes.arrayOf(
     PropTypes.shape({
       href: PropTypes.string,

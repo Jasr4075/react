@@ -1,4 +1,4 @@
-import { Container, Row, Table } from "react-bootstrap";
+import { Container, Row } from "react-bootstrap";
 import CustomCard from "../../components/CustomCard";
 import AosInitializer from "../../services/utils/aos";
 import CheckTable from "../../components/CheckTable";
@@ -7,20 +7,23 @@ const Subscription = () => {
     const cards = [
         {
             title: "Personalização de Treinos",
-            subtitle: "Treinos Personalizados para uma Vida Saudável",
-            text: "O aplicativo oferece treinos adaptados às necessidades específicas de idosos, considerando níveis de mobilidade, condições de saúde e objetivos pessoais. Os exercícios podem ser ajustados conforme o progresso do usuário.",
-            links: [{ href: "#", text: "Treinos" }],
-        },
-        {
-            title: "Interface Intuitiva e Amigável",
-            subtitle: "Simples, Clara e Feita para Você",
-            text: "Uma interface projetada para fácil navegação, com botões grandes, fontes legíveis e opções de assistência por áudio para garantir que os idosos usem o app com conforto e segurança.",
-            links: [{ href: "#", text: "Saiba Mais" }],
+            subtitle: "Treinos Personalizados",
+            text: "Nosso aplicativo oferece treinos adaptados às necessidades específicas dos idosos, levando em consideração níveis de mobilidade, condições de saúde e objetivos pessoais. Os exercícios podem ser ajustados conforme o progresso de cada usuário, garantindo uma evolução contínua e segura.",
+            value: "R$ 9,99/mês - Básico",
+            links: [{ href: "#", text: "Ver Treinos" }],
         },
         {
             title: "Monitoramento e Feedback",
             subtitle: "Acompanhe Seu Progresso e Mantenha-se Motivado",
-            text: "O app permite o acompanhamento do progresso, oferecendo relatórios simples sobre frequência de treinos, calorias gastas e metas alcançadas. Possui também lembretes amigáveis para manter a regularidade.",
+            text: "Nosso aplicativo permite o acompanhamento detalhado do seu progresso, oferecendo relatórios claros sobre a frequência dos treinos, calorias queimadas e metas atingidas. Além disso, contamos com lembretes amigáveis para ajudar a manter a regularidade nos exercícios.",
+            value: "R$ 19,99/mês - Premium",
+            links: [{ href: "#", text: "Saiba Mais" }],
+        },
+        {
+            title: "Convenios com academias e fisioterapeutas",
+            subtitle: "Especialistas para   Cuidar de Você",
+            text: "Contamos com uma rede de academias e fisioterapeutas parceiros, que oferecem descontos exclusivos para os usuários do nosso aplicativo. Com profissionais qualificados e estrutura adequada, você terá todo o suporte necessário para alcançar seus objetivos com segurança e eficiência.",
+            value: "R$ 29,99/mês - Premium",
             links: [{ href: "#", text: "Saiba Mais" }],
         },
     ];
@@ -30,7 +33,7 @@ const Subscription = () => {
             <AosInitializer />
             <Container>
                 <h2 className="features-heading" data-aos="fade-up">
-                    Subscription
+                    Planos de Assinatura
                 </h2>
 
                 <Row className="justify-content-center">
@@ -41,20 +44,19 @@ const Subscription = () => {
                             subtitle={card.subtitle}
                             text={card.text}
                             links={card.links}
+                            value={card.value}
                             animation="fade-right"
                         />
                     ))}
                 </Row>
-                <Row className="justify-content-center">
-                    <CheckTable
-                        headers={["Features", "Basic", "Pro"]}
-                        rows={[
-                            ["Personalização de Treinos", "✔", "✔"],
-                            ["Monitoramento e Feedback", "✔", "✔"],
-                            ["Treinos Específicos", "✖", "✔"],
-                        ]}
-                    />
-                </Row>
+                <CheckTable
+                    headers={["Recursos", "Básico", "Pro"]}
+                    rows={[
+                        ["Personalização de Treinos", "✔", "✔"],
+                        ["Monitoramento e Feedback", "✔", "✔"],
+                        ["Treinos Específicos", "✖", "✔"],
+                    ]}
+                />
             </Container>
         </>
     );
