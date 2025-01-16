@@ -4,6 +4,7 @@ import { Toaster, toast } from 'react-hot-toast';
 import { useNavigate } from 'react-router-dom';
 import CButton from '../../components/CustomButton';
 import axios from '../../services/axiosConfig';
+import Cookies from 'js-cookie';
 
 const Login = () => {
     const [email, setEmail] = useState('');
@@ -12,13 +13,17 @@ const Login = () => {
 
     const handleLogin = async (e) => {
         e.preventDefault();
+        if (!validateEmail(email)) {
+            toast.error('Por favor, insira um email válido.');
+            return;
+        }
         try {
             const response = await axios.post('/user/login', {
                 email,
                 password
             });
-            localStorage.setItem('token', response.data.token);
-            localStorage.setItem('username', response.data.user.username);
+            Cookies.set('token', response.data.token, { secure: true, sameSite: 'strict' });
+            Cookies.set('username', response.data.user.username, { secure: true, sameSite: 'strict' });
             const event = new Event('login');
             window.dispatchEvent(event);
             toast.success('Login bem-sucedido');
@@ -27,6 +32,11 @@ const Login = () => {
             toast.dismiss();
             toast.error(error.response?.data?.message || 'Erro ao fazer login. Tente novamente.');
         }
+    };
+
+    const validateEmail = (email) => {
+        const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return re.test(String(email).toLowerCase());
     };
 
     const styles = {

@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Navbar, Nav, Container } from "react-bootstrap";
 import CButton from "./customButton";
+import Cookies from "js-cookie";
 
 const NavbarComp = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -8,11 +9,11 @@ const NavbarComp = () => {
 
   useEffect(() => {
     const updateUser = () => {
-      const token = localStorage.getItem("token");
-      const user = localStorage.getItem("username");
+      const token = Cookies.get("token");
+      const user = Cookies.get("username");
       if (token) {
         setIsLoggedIn(true);
-        setUsername(user);
+        setUsername(user || "Usuário");
       } else {
         setIsLoggedIn(false);
         setUsername("");
@@ -44,9 +45,9 @@ const NavbarComp = () => {
               <CButton href="/account/register">Registrar</CButton>
             </div>
           ) : (
-              <Nav.Link href="/#profile" className="d-flex ms-auto text-white">
-                <span>Olá, {username}</span>
-              </Nav.Link>
+            <Nav.Link href="/#profile" className="d-flex ms-auto text-white">
+              <span>Olá, {username}</span>
+            </Nav.Link>
           )}
         </Navbar.Collapse>
       </Container>
