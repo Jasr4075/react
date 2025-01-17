@@ -36,13 +36,21 @@ export const getAllUsers = async (req, res) => {
 
 export const updateUser = async (req, res) => {
   try {
-    const { username, email, password } = req.body;
+    const { username, email, password, firstName, lastName, bio, profilePicture } = req.body;
     const user = await User.findByPk(req.params.id);
     if (!user) {
       return res.status(404).json({ message: 'User not found' });
     }
     const hashedPassword = password ? await bcrypt.hash(password, 10) : user.password;
-    await user.update({ username, email, password: hashedPassword });
+    await user.update({ 
+      username, 
+      email, 
+      password: hashedPassword, 
+      firstName, 
+      lastName, 
+      bio, 
+      profilePicture 
+    });
     res.json({ message: 'User updated successfully' });
   } catch (error) {
     res.status(400).json({ message: 'Error updating user', error: error.message });
@@ -85,6 +93,10 @@ export const loginUser = async (req, res) => {
         id: user.id,
         email: user.email,
         username: user.username,
+        firstName: user.firstName,
+        lastName: user.lastName,
+        bio: user.bio,
+        profilePicture: user.profilePicture
       },
     });
   } catch (error) {

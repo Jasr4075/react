@@ -45,7 +45,7 @@ const NavbarComp = () => {
               <CButton href="/account/register">Registrar</CButton>
             </div>
           ) : (
-            <Nav.Link href="/#profile" className="d-flex ms-auto text-white">
+            <Nav.Link href="/account/profile" className="d-flex ms-auto text-white">
               <span>Olá, {username}</span>
             </Nav.Link>
           )}

@@ -20,6 +20,22 @@ const User = sequelize.define('User', {
     type: DataTypes.STRING,
     allowNull: false,
   },
+  firstName: {
+    type: DataTypes.STRING,
+    allowNull: true,
+  },
+  lastName: {
+    type: DataTypes.STRING,
+    allowNull: true,
+  },
+  bio: {
+    type: DataTypes.TEXT,
+    allowNull: true,
+  },
+  profilePicture: {
+    type: DataTypes.STRING,
+    allowNull: true,
+  },
 });
 
 User.beforeCreate(async (user) => {
